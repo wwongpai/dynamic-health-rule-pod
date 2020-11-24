@@ -1,0 +1,75 @@
+{
+    "name": "hl-pod-mem-podname",
+    "enabled": true,
+    "useDataFromLastNMinutes": 5,
+    "waitTimeAfterViolation": 30,
+    "scheduleName": "Always",
+    "affects": {
+        "affectedEntityType": "CUSTOM",
+        "affectedEntityScope": {
+            "entityScope": "SPECIFIC_ENTITY_PERFORMANCE",
+            "entityType": "SERVER",
+            "affectedEntityName": "podname"
+        }
+    },
+    "evalCriterias": {
+        "criticalCriteria": {
+            "conditionAggregationType": "ALL",
+            "conditionExpression": null,
+            "conditions": [
+                {
+                    "name": "Condition 1",
+                    "shortName": "A",
+                    "evaluateToTrueOnNoData": false,
+                    "evalDetail": {
+                        "evalDetailType": "SINGLE_METRIC",
+                        "metricAggregateFunction": "VALUE",
+                        "metricPath": "Application Infrastructure Performance|Root|Individual Nodes|podname|Hardware Resources|Memory|Used (MB)",
+                        "metricEvalDetail": {
+                            "metricEvalDetailType": "BASELINE_TYPE",
+                            "baselineCondition": "GREATER_THAN_BASELINE",
+                            "baselineName": "Default Baseline",
+                            "compareValue": 3,
+                            "baselineUnit": "STANDARD_DEVIATIONS"
+                        }
+                    },
+                    "triggerEnabled": false,
+                    "minimumTriggers": 2
+                }
+            ],
+            "evalMatchingCriteria": {
+                "matchType": "ANY_NODE",
+                "value": null
+            }
+        },
+        "warningCriteria": {
+            "conditionAggregationType": "ALL",
+            "conditionExpression": null,
+            "conditions": [
+                {
+                    "name": "Condition 1",
+                    "shortName": "A",
+                    "evaluateToTrueOnNoData": false,
+                    "evalDetail": {
+                        "evalDetailType": "SINGLE_METRIC",
+                        "metricAggregateFunction": "VALUE",
+                        "metricPath": "Application Infrastructure Performance|Root|Individual Nodes|podname|Hardware Resources|Memory|Used (MB)",
+                        "metricEvalDetail": {
+                            "metricEvalDetailType": "BASELINE_TYPE",
+                            "baselineCondition": "GREATER_THAN_BASELINE",
+                            "baselineName": "Default Baseline",
+                            "compareValue": 2,
+                            "baselineUnit": "STANDARD_DEVIATIONS"
+                        }
+                    },
+                    "triggerEnabled": false,
+                    "minimumTriggers": 2
+                }
+            ],
+            "evalMatchingCriteria": {
+                "matchType": "ANY_NODE",
+                "value": null
+            }
+        }
+    }
+}

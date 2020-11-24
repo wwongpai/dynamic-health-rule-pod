@@ -1,0 +1,17 @@
+# AppDynamics Controller Host
+ControllerHost: 
+
+# AppDynamics User Name
+UserName: 
+
+# AppDynamics Account Name
+AccountName: 
+
+# AppDynamics Password
+Password: 
+
+# Kubernetes Namespace
+Namespace: 
+
+# Alert Template (If CPU Alert, put in as "template-hl-pod-cpu.json". If Memory Alert, put in as "template-hl-pod-mem.json")
+TemplateName: template-hl-pod-cpu.json
