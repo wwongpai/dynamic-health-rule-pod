@@ -38,7 +38,7 @@ payload = {}
 headers = {
   'Content-Type': 'application/json;charset=UTF-8',
   'X-CSRF-TOKEN': csrf_token,
-  'Authorization': 'Basic dGNhZG1pbkBjdXN0b21lcjE6R29vZDJkYXk=',
+  'Authorization': 'Basic xxxx',
   'Cookie': f'X-CSRF-TOKEN={csrf_token}; JSESSIONID={jsessionid}'
 }
 response = requests.request("GET", url_sim, headers=headers, data = payload)
